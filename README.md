@@ -46,7 +46,7 @@ Create your own custom app tailored to your unique needs.
 To begin using My Geminis, clone this repository and navigate to the desired application's directory:
 
 ```bash
-git clone https://github.com/yourusername/my-geminis.git
+git clone https://github.com/omarnj-lab/My-Geminis.git
 cd my-geminis
 pip install -r requirements.txt
 streamlit run app.py
