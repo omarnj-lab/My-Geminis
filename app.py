@@ -75,7 +75,7 @@ with col2:
     professional_commands = ["GemResume.py", "GemInvest.py", "GemTrend.py", "GemContract.py"]
     for i, app in enumerate(professional_apps):
         if cols[i].button(app):
-            subprocess.run([f"{sys.executable}", professional_commands[i]])
+            subprocess.run(["python", professional_commands[i]])
     
     # Row 3: Educational Enhancements
     st.markdown("#### ✥ Gemini Academic Tools 🏛️")
@@ -86,7 +86,7 @@ with col2:
     for i, app in enumerate(educational_apps):
         if cols[i].button(app):
             if educational_commands[i]:
-                subprocess.run([f"{sys.executable}", educational_commands[i]])
+                subprocess.run(["python", educational_commands[i]])
             else:
                 st.write(f"Functionality for {app} is not implemented yet.")
     
@@ -99,14 +99,14 @@ with col2:
     for i, app in enumerate(multimodal_apps):
         if cols[i].button(app):
             if multimodal_commands[i]:
-                subprocess.run([f"{sys.executable}", multimodal_commands[i]])
+                subprocess.run(["python", multimodal_commands[i]])
             else:
                 st.write(f"Functionality for {app} is not implemented yet.")
     
     st.markdown("#### ✥ Craft Your Concept ✏️")
     st.markdown("Create your own custom app tailored to your unique needs.")
     if st.button("Create Your Own App", key="create_app"):
-        subprocess.run([f"{sys.executable}", "GemCustom.py"])
+        subprocess.run(["python", "GemCustom.py"])
 
 
 # Adding an informational message at the bottom
