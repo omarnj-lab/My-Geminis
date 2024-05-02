@@ -65,7 +65,7 @@ with col2:
     nlp_commands = ["Geminize.py", "GemQuest.py", "GemMood.py", "GemLingo.py"]
     for i, app in enumerate(nlp_apps):
         if cols[i].button(app):
-            subprocess.run(["python", nlp_commands[i]])
+            subprocess.run([sys.executable, nlp_commands[i]])
     
     # Row 2: Professional Systems
     st.markdown("#### ✥ Gemini Enterprise Engines 🚀")
