@@ -48,7 +48,7 @@ To begin using My Geminis, clone this repository and navigate to the desired app
 ```bash
 git clone https://github.com/yourusername/my-geminis.git
 cd my-geminis
-pip install -r requirments.txt
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
