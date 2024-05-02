@@ -36,4 +36,15 @@ Dive into multimedia exploration with versatile applications.
 Create your own custom app tailored to your unique needs.
 - **Custom App Development**: Design and deploy bespoke applications.
 
+## Getting Started
+
+To begin using My Geminis, clone this repository and navigate to the desired application's directory:
+
+```bash
+git clone https://github.com/yourusername/my-geminis.git
+cd my-geminis
+pip install -r requirments.txt
+streamlit run app.py
+```
+
 > **Note**: These apps were developed for Google AI hackathons and are available on Streamlit.
