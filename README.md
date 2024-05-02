@@ -2,6 +2,11 @@
 
 Explore specialized domain-specific language models with My Geminis, built on the robust Gemini LLM framework. Tailored to deliver precision and effectiveness, these applications serve distinct needs across professional, educational, and creative fields.
 
+
+![Project UI](https://i.ibb.co/wLgc376/Screenshot-2024-05-02-at-11-59-13-PM.png)
+
+
+
 ## Categories
 
 ### ✥ Gemini Language Wizards 🧙‍♂️
