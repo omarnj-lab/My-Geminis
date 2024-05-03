@@ -44,11 +44,11 @@ Create your own custom app tailored to your unique needs.
 ## Getting Started
 
 To begin using My Geminis, clone this repository and navigate to the desired application's directory:
-
 ```bash
 git clone https://github.com/omarnj-lab/My-Geminis.git
 cd my-geminis
 pip install -r requirements.txt
+> **Note**: You may need to create .env file and assign your API Key : GOOGLE_API_KEY="YOUR_API_KEY"
 streamlit run app.py
 ```
 
