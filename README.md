@@ -52,4 +52,3 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-> **Note**: These apps were developed for Google AI hackathons and are available as an Streamlit app [local for now].
