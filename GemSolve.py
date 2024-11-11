@@ -63,7 +63,7 @@ def main():
     uploaded_file = st.file_uploader("Upload an image of your question and solution:", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
-        st.image(uploaded_file, caption='Uploaded Solution', use_column_width=True)
+        st.image(uploaded_file, caption='Uploaded Solution', use_container_width=True)
         st.write("Image Uploaded Successfully")
 
     if st.button("Check My Answer"):

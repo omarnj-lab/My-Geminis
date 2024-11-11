@@ -33,7 +33,7 @@ def load_sidebar_content():
     with open(logo_image, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode('utf-8')
     
-    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_column_width=True)
+    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_container_width=True)
     st.sidebar.title("Geminize")
     st.sidebar.write("This application uses gemini-1.5-flash to summarize text into a concise form.")
     st.sidebar.write("## How to Use")
