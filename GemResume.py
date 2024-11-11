@@ -35,7 +35,7 @@ def load_sidebar_content():
     with open(logo_image, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode('utf-8')
     
-    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_column_width=True)
+    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_container_width=True)
     st.sidebar.title("GemResume")
     st.sidebar.write("This application uses Gemini Pro Vision Model to review the provided resume against the job description.")
     st.sidebar.write("It also give you a percentage of match if the resume matches the job description")
@@ -51,7 +51,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def get_gemini_response(input_prompt, pdf_content, input_text):
-    model = genai.GenerativeModel('gemini-pro-vision')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     response = model.generate_content([input_prompt, pdf_content[0], input_text])
     return response.text
 

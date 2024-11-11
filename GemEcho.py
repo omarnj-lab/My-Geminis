@@ -34,7 +34,7 @@ def load_sidebar_content():
     with open(logo_image, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode('utf-8')
     
-    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_column_width=True)
+    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_container_width=True)
     st.sidebar.title("GemEcho")
     st.sidebar.write("This application uses Gemini 1.5 Pro to answer your query about an uploaded audio")
     st.sidebar.write("## How to Use")
@@ -49,7 +49,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def get_audio_response(prompt, audio_data):
-    model = genai.GenerativeModel('models/gemini-1.5-pro-latest')
+    model = genai.GenerativeModel('models/gemini-1.5-flash')
     response = model.generate_content([prompt, {"mime_type": "audio/mpeg", "data": audio_data}])
     return response.text
 

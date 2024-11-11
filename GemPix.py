@@ -34,7 +34,7 @@ def load_sidebar_content():
     with open(logo_image, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode('utf-8')
     
-    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_column_width=True)
+    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_container_width=True)
     st.sidebar.title("GemPix")
     st.sidebar.write("This application uses Gemini 1.5 Pro with 1M Tokens Context Window to describe images and create stories based on uploaded image")
     st.sidebar.write("## How to Use")
@@ -48,7 +48,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def get_gemini_response(input_prompt, image_data):
-    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     encoded_image = base64.b64encode(image_data.getvalue()).decode('utf-8')
     response = model.generate_content([input_prompt, {"mime_type": "image/jpeg", "data": encoded_image}])
     return response.text
@@ -61,7 +61,7 @@ def main():
     user_query = st.text_area("Enter your query about the image:")
 
     if uploaded_file is not None:
-        st.image(uploaded_file, caption='Uploaded Image', use_column_width=True)
+        st.image(uploaded_file, caption='Uploaded Image', use_container_width=True)
         st.write("Image Uploaded Successfully")
 
     if st.button("Describe Image"):

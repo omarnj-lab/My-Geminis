@@ -35,7 +35,7 @@ def load_sidebar_content():
     
     st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_column_width=True)
     st.sidebar.title("Geminize")
-    st.sidebar.write("This application uses Gemini-Pro to summarize text into a concise form.")
+    st.sidebar.write("This application uses gemini-1.5-flash to summarize text into a concise form.")
     st.sidebar.write("## How to Use")
     st.sidebar.write("""
         - Enter the text you want to summarize in the text area.
@@ -48,7 +48,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def summarize_text(text, max_words):
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     prompt = f"Summarize the following text to {max_words} words: {text}"
     response = model.generate_content(prompt)
     return response.text

@@ -31,7 +31,7 @@ def load_sidebar_content():
     with open(logo_image, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode('utf-8')
     
-    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_column_width=True)
+    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_container_width=True)
     st.sidebar.title("GemCustom")
     st.sidebar.write("This application will create a custom app based on your preferences")
     st.sidebar.write("## How to Use")
@@ -69,7 +69,7 @@ def create_custom_app():
     st.header("Create Your Own App")
 
     app_type = st.selectbox("Select the type of your app:", ["Text", "Image", "Audio", "Video"])
-    model_choice = st.selectbox("Choose the AI model:", ['gemini-pro', 'gemini-pro-vision', 'gemini-1.5-pro-latest'])
+    model_choice = st.selectbox("Choose the AI model:", ['gemini-pro', 'gemini-1.5-flash', 'gemini-1.5-pro-latest'])
     user_prompt = st.text_area("Enter your custom prompt:")
 
     model = load_model(model_choice)  # Load the selected model

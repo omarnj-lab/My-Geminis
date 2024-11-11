@@ -45,7 +45,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def analyze_market_trends(data):
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     prompt = f"Provide an analysis of the following market trends based on the dataset provided: {data.describe().to_string()}"
     response = model.generate_content(prompt)
     return response.text

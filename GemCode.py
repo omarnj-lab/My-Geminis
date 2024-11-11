@@ -31,9 +31,9 @@ def load_sidebar_content():
     with open(logo_image, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode('utf-8')
     
-    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_column_width=True)
+    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_container_width=True)
     st.sidebar.title("GemCode")
-    st.sidebar.write("This application uses gemini-1.5-pro-latest to generate code based on your query")
+    st.sidebar.write("This application uses gemini-1.5-flash to generate code based on your query")
     st.sidebar.write("## How to Use")
     st.sidebar.write("""
         - Select the programming language.
@@ -45,7 +45,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def generate_code(language, query):
-    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     # Create a detailed prompt to instruct the model to generate specific code.
     prompt = f"Write a {language} function based on this description: {query}. " \
              f"Include comments and handle typical edge cases. Provide an example on how to use the code."

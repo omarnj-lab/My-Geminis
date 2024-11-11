@@ -31,9 +31,9 @@ def load_sidebar_content():
     with open(logo_image, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode('utf-8')
     
-    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_column_width=True)
+    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_container_width=True)
     st.sidebar.title("GemPath")
-    st.sidebar.write("This application uses gemini-1.5-pro-latest to Create a detailed learning roadmap for a student interested in a certain major")
+    st.sidebar.write("This application uses gemini-1.5-flash to Create a detailed learning roadmap for a student interested in a certain major")
     st.sidebar.write("## How to Use")
     st.sidebar.write("""
         - Enter the major or field of study
@@ -44,7 +44,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def generate_learning_pathway(major, details):
-    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     # Create a detailed prompt to instruct the model to generate a learning pathway.
     prompt = f"Create a detailed learning roadmap for a student interested in {major}. " \
              f"Include key subjects to study, recommended resources (books, websites, courses), " \

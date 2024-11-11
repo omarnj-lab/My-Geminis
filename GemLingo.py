@@ -31,7 +31,7 @@ def load_sidebar_content():
     with open(logo_image, "rb") as image_file:
         encoded_logo = base64.b64encode(image_file.read()).decode('utf-8')
     
-    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_column_width=True)
+    st.sidebar.image(f"data:image/png;base64,{encoded_logo}", use_container_width=True)
     st.sidebar.title("GemLingo")
     st.sidebar.write("This application uses Gemini Pro to translate from one source langauge to another target language.")
     st.sidebar.write("## How to Use")
@@ -46,7 +46,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def translate_text(text, source_lang, target_lang):
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     prompt = f"Translate from {source_lang} to {target_lang}: {text}"
     response = model.generate_content(prompt)
     return response.text
