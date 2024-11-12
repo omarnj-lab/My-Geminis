@@ -109,4 +109,4 @@ with col2:
 
 # Adding an informational message at the bottom
 st.info("Discover a diverse range of applications tailored to your needs with My Geminis. Whether you're delving into language processing, powering through professional tasks, enhancing your educational experience, or exploring multimodal applications, My Geminis has you covered. Simply select a category below to unlock a world of possibilities!")
-st.info("Created By Omer Nacar | 🔗 www.omarai.co")
+st.info("Created By Omer Nacar | 🔗 www.omarai.me")
