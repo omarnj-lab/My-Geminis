@@ -51,7 +51,9 @@ pip install -r requirements.txt
 > **Note**: You may need to create .env file and assign your API Key : GOOGLE_API_KEY="YOUR_API_KEY"
 streamlit run app.py
 ```
-## Cite The Work ```
+
+## Cite The Work 
+```
 @misc{nacar2024mygeminis,
   author = {Nacar, Omer},
   title = {My Geminis: Specialized Domain-Specific Language Models Built on the Gemini LLM Framework},
